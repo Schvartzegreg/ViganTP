@@ -10,21 +10,30 @@ html {
   font-family: "Roboto";
 }
 
+/*TOP*/
+
 #top {
-  width: 100%;
-  height: 96vh;
+  width: 100vw;
+  height: 98vh;
+  max-width: 100%;
   border: solid 3px rgba(0, 0, 0, 0.541);
-  border-radius: 10px;
+  border-radius: 1.3vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 3vh;
   margin-top: 0;
+  position: relative;
 }
 
 #tp_header {
-  font-size: ;
+  font-size: 10.41vh;
   font-weight: 300;
+  margin-top: 6vh;
+  margin-bottom: 20px;
+}
+
+#made_by {
   margin-top: 0;
 }
 
@@ -32,22 +41,23 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 40px;
+  margin-bottom: 0.65vh;
+  margin-top: 0;
 }
 
 .authors > h3 {
   font-weight: 400;
+  font-size: 3vh;
+  margin-bottom: 0.65vh;
 }
 
 .authors > img {
-  width: 50px;
-  height: 50px;
+  width: min(60px, 7.8vw);
   margin-top: 0;
 }
 
 #continue_button {
-  width: 200px;
-  height: 100px;
+  width: 15vw;
   background: url("src/cc1.jpg");
   background-size: cover;
   background-position: center;
@@ -56,8 +66,13 @@ html {
   justify-content: center;
   align-items: center;
   transition: 200ms ease-in-out;
-  margin-top: 50px;
-  border-radius: 5px;
+  margin-top: 10.4vh;
+}
+
+#continue_button:before {
+  content: "";
+  display: block;
+  padding-top: 53.25%;
 }
 
 #continue_button:hover {
@@ -68,9 +83,12 @@ html {
   color: rgb(255, 255, 255);
   font-family: "Roboto";
   font-weight: 300;
-  padding: 25px 45px;
+  font-size: 25px;
+  padding: 10%;
   border: solid 1.5px white;
 }
+
+/*BOTTOM*/
 
 #bot {
   height: 100vh;
@@ -86,24 +104,24 @@ html {
 }
 
 #bot > h1 {
-  color: rgb(255, 255, 255);
+  color: rgb(187, 187, 187);
   font-family: "Roboto";
   font-weight: 300;
-  margin-bottom: 80px;
-  font-size: 60px;
+  margin-bottom: 13.02vh;
+  font-size: 7.61vh;
 }
 
 .nav_button {
   text-decoration: none;
   color: white;
   font-family: "Roboto";
-  font-size: 30px;
+  font-size: 4vh;
   font-weight: 300;
   margin-bottom: 40px;
   background-color: rgba(0, 0, 0, 0.418);
   text-align: center;
   width: 100vw;
-  padding: 5px;
+  padding: 0.65vh;
   opacity: 0.7;
   transition: 250ms ease-in-out;
 }
@@ -111,6 +129,8 @@ html {
 .nav_button:hover {
   opacity: 1;
 }
+
+/*HISTORY*/
 
 #history_page {
   font-family: "Roboto";
@@ -121,30 +141,87 @@ html {
 }
 
 #history_page > h1 {
-  font-size: 80px;
+  font-size: 10.42vh;
   font-weight: 400;
   color: rgb(46, 46, 46);
+  margin-bottom: 10vh;
+}
+
+#history_page > a {
+  margin-bottom: 10vh;
 }
 
 #oldvigan {
   width: 50vw;
 }
 
-#paragraph {
+#history_content {
   width: 100vw;
   height: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  font-size: 26px;
-  font-weight: 500;
   background-image: url(/src/oldvigan2.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
+  padding: 1vh 3.93vw;
+}
+
+#paragraph {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  font-size: 3.39vh;
+  font-weight: 500;
 }
 
 .history_par {
-  padding: 30px;
+  padding: 1vh 3.93vw;
   color: rgb(46, 46, 46);
+}
+
+#timeline {
+  padding: 1vh 3.93vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: rgb(46, 46, 46);
+}
+
+#timeline > h1 {
+  font-size: 7vh;
+  font-weight: 400;
+}
+
+#timeline > h4 {
+  font-size: 5vh;
+  margin-bottom: 0;
+}
+
+#timeline > img {
+  width: 50vw;
+  border-radius: 1.3vh;
+}
+
+#timeline > p {
+  font-size: 3.26vh;
+}
+
+.histmargin {
+  margin-top: 30vh;
+}
+
+/* BUTTONS */
+
+.buttons > a {
+  font-family: "Roboto";
+  color: white;
+  background-color: rgba(0, 0, 0, 0.219);
+  padding: 20px 40px;
+  text-decoration: none;
+  border-radius: 10px;
+  transition: 250ms ease-in-out;
+}
+
+.buttons > a:hover {
+  background-color: rgba(0, 0, 0, 0.637);
 }
