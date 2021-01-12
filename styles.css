@@ -52,12 +52,12 @@ html {
 }
 
 .authors > img {
-  width: min(60px, 7.8vw);
+  width: min(90px, 20%);
   margin-top: 0;
 }
 
 #continue_button {
-  width: 15vw;
+  height: calc(10vw * 0.45);
   background: url("src/cc1.jpg");
   background-size: cover;
   background-position: center;
@@ -69,12 +69,6 @@ html {
   margin-top: 10.4vh;
 }
 
-#continue_button:before {
-  content: "";
-  display: block;
-  padding-top: 53.25%;
-}
-
 #continue_button:hover {
   opacity: 0.8;
 }
@@ -83,8 +77,8 @@ html {
   color: rgb(255, 255, 255);
   font-family: "Roboto";
   font-weight: 300;
-  font-size: 25px;
-  padding: 10%;
+  font-size: calc(10vw * 0.15);
+  padding: 5% 9%;
   border: solid 1.5px white;
 }
 
@@ -224,4 +218,55 @@ html {
 
 .buttons > a:hover {
   background-color: rgba(0, 0, 0, 0.637);
+}
+
+/* CULTURE */
+
+#culture {
+  background-color: rgb(54, 54, 54);
+  color: white;
+  font-family: "Roboto";
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#culture_header {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+}
+
+#culture_header > img {
+  width: 20vw;
+}
+
+#culture_header > h1 {
+  font-weight: 300;
+}
+
+.culturebox {
+  display: flex;
+  flex-direction: row;
+}
+
+.culturebox > div {
+  width: 45vw;
+  margin: 2%;
+  padding: 2%;
+  background-color: rgba(0, 0, 0, 0.267);
+  border-radius: 5vw;
+}
+
+.culturebox > div > h4 {
+  font-size: 3.91vh;
+}
+
+.culturebox > div > p {
+  font-size: 2.5vh;
 }
