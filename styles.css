@@ -229,7 +229,6 @@ html {
   text-align: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 
@@ -250,23 +249,82 @@ html {
   font-weight: 300;
 }
 
+#culture > p {
+  width: 70%;
+  font-size: 3vh;
+  font-weight: 300;
+  margin: 5%;
+  padding: 2%;
+  border: solid 1px white;
+  margin-bottom: 10vh;
+}
+
 .culturebox {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .culturebox > div {
-  width: 45vw;
-  margin: 2%;
-  padding: 2%;
+  width: 70vw;
   background-color: rgba(0, 0, 0, 0.267);
   border-radius: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5vh;
+}
+
+.culturebox > div > img {
+  width: 65%;
+  margin-bottom: 5%;
+  border-radius: 2%;
 }
 
 .culturebox > div > h4 {
   font-size: 3.91vh;
+  padding: 2%;
+  font-weight: 300;
 }
 
 .culturebox > div > p {
+  font-size: 2.5vh;
+  padding: 2%;
+  font-weight: 300;
+}
+
+#festival_header {
+  display: flex;
+  flex-direction: row;
+  width: 60vw;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+#festival_header > img {
+  width: 20vw;
+}
+
+#festival_header > h1 {
+  font-weight: 300;
+}
+
+#festival {
+  width: 70vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-weight: 300;
+}
+
+#festival > h4 {
+  font-size: 3.91vh;
+  font-weight: 300;
+}
+
+#festival > p {
   font-size: 2.5vh;
 }
