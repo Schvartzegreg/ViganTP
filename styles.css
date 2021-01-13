@@ -2,6 +2,9 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-snap-type: proximity;
+  scroll-snap-type: y proximity;
+  margin: 0;
 }
 
 #home {
@@ -10,14 +13,15 @@ html {
   font-family: "Roboto";
   background-color: rgb(187, 187, 187);
   margin: 0;
+  overflow-y: scroll;
 }
 
 /*TOP*/
 
 #top {
+  scroll-snap-align: center;
   width: 100vw;
   height: 100vh;
-  margin-top: 0;
   position: relative;
   color: rgba(0, 0, 0, 0.541);
   display: flex;
@@ -29,7 +33,6 @@ html {
 #border {
   width: 95vw;
   height: 95vh;
-  max-height: 95vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,9 +70,12 @@ html {
   margin-top: 0;
 }
 
-#continue_button {
+#tobot {
+  width: 10vw;
+}
+
+.continue_button {
   height: calc(10vw * 0.45);
-  background: url("src/cc1.jpg");
   background-size: cover;
   background-position: center;
   text-decoration: none;
@@ -77,25 +83,60 @@ html {
   justify-content: center;
   align-items: center;
   transition: 200ms ease-in-out;
-  margin-top: calc(3vh + 2vw);
+  border-radius: 5vh;
 }
 
-#continue_button:hover {
-  opacity: 0.8;
+.continue_button:hover {
+  opacity: 0.6;
 }
 
-#continue_button > p {
+.continue_button > p {
   color: rgb(255, 255, 255);
   font-family: "Roboto";
   font-weight: 300;
   font-size: calc(10vw * 0.15);
   padding: 5% 9%;
   border: solid 1.5px white;
+  border-radius: 5vh;
+}
+
+@media (max-width: 900px) {
+  #top {
+    max-height: 100%;
+    max-width: 100%;
+  }
+
+  #tp_header {
+    font-size: 12vw;
+    text-align: center;
+  }
+
+  #tobot {
+    width: calc(10vh);
+  }
+
+  .continue_button {
+    height: calc(10vh * 0.45);
+  }
+
+  .authors > h3 {
+    font-size: 5vw;
+  }
+
+  .continue_button > p {
+    font-size: calc(10vh * 0.15);
+  }
+
+  .authors > img {
+    width: calc(5vh + 12vw);
+    margin-top: 0;
+  }
 }
 
 /*BOTTOM*/
 
 #bot {
+  scroll-snap-align: center;
   height: 100vh;
   width: 100vw;
   background-image: url(src/cc2.jpg);
@@ -105,13 +146,15 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: 0;
+  position: relative;
 }
 
 #bot > h1 {
   color: rgb(187, 187, 187);
   font-family: "Roboto";
   font-weight: 300;
-  margin-bottom: 13.02vh;
+  margin-bottom: 17vh;
   font-size: 7.61vh;
 }
 
@@ -121,7 +164,7 @@ html {
   font-family: "Roboto";
   font-size: 4vh;
   font-weight: 300;
-  margin-bottom: 40px;
+  margin-bottom: 6vh;
   background-color: rgba(0, 0, 0, 0.418);
   text-align: center;
   width: 100vw;
@@ -134,13 +177,36 @@ html {
   opacity: 1;
 }
 
+#tocon {
+  width: 13vw;
+  position: absolute;
+  bottom: 10%;
+}
+
+@media (max-width: 900px) {
+  #bot > h1 {
+    font-size: 12vw;
+    text-align: center;
+  }
+
+  .nav_button {
+    font-size: 6vw;
+  }
+
+  #tocon {
+    width: 13vh;
+  }
+}
+
 /*HISTORY*/
 
 #history_page {
+  max-width: 100%;
   font-family: "Roboto";
   background-color: #edcf91;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 }
 
@@ -167,19 +233,21 @@ html {
   background-size: cover;
   background-attachment: fixed;
   padding: 1vh 3.93vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #paragraph {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+  margin-top: 5vh;
+  columns: 2;
   font-size: 3.39vh;
   font-weight: 500;
-}
-
-.history_par {
+  align-self: center;
   padding: 1vh 3.93vw;
   color: rgb(46, 46, 46);
+  align-self: center;
 }
 
 #timeline {
@@ -194,40 +262,99 @@ html {
 #timeline > h1 {
   font-size: 7vh;
   font-weight: 400;
+  text-align: center;
 }
 
 #timeline > h4 {
   font-size: 5vh;
   margin-bottom: 0;
+  text-align: center;
 }
 
 #timeline > img {
   width: 50vw;
-  border-radius: 1.3vh;
+  border-radius: 1.3vw;
+  text-align: center;
 }
 
 #timeline > p {
   font-size: 3.26vh;
+  text-align: center;
 }
 
 .histmargin {
   margin-top: 30vh;
 }
 
+@media (max-width: 900px) {
+  #history_page > h1 {
+    font-size: 12vw;
+    text-align: center;
+  }
+
+  #oldvigan {
+    width: 100vw;
+  }
+
+  #paragraph {
+    font-size: 5vw;
+    columns: 1;
+    width: 90vw;
+  }
+  #timeline {
+    width: 90vw;
+  }
+
+  #timeline > h1 {
+    font-size: 7vw;
+  }
+
+  #timeline > h4 {
+    font-size: 5vw;
+  }
+
+  #timeline > img {
+    width: 100vw;
+    border-radius: 1.3vw;
+  }
+
+  #timeline > p {
+    font-size: 5vw;
+  }
+
+  .histmargin {
+    margin-top: 20vh;
+  }
+}
+
 /* BUTTONS */
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90vw;
+}
 
 .buttons > a {
   font-family: "Roboto";
   color: white;
   background-color: rgba(0, 0, 0, 0.219);
-  padding: 20px 40px;
+  padding: 2% 4%;
   text-decoration: none;
   border-radius: 10px;
   transition: 250ms ease-in-out;
+  margin: 1%;
 }
 
 .buttons > a:hover {
   background-color: rgba(0, 0, 0, 0.637);
+}
+
+@media (max-width: 900px) {
+  .buttons > a {
+    font-size: 4vw;
+  }
 }
 
 /* CULTURE */
@@ -334,6 +461,7 @@ html {
 #festival > h4 {
   font-size: 3.91vh;
   font-weight: 300;
+  margin-top: 10vh;
 }
 
 #festival > img {
@@ -343,7 +471,39 @@ html {
 
 #festival > p {
   font-size: 2.5vh;
-  margin-bottom: 10vh;
+}
+
+@media (max-width: 900px) {
+  #culture_header {
+    margin-top: 0;
+    width: 90vw;
+    flex-direction: column;
+    margin-bottom: 5vh;
+  }
+
+  #culture_header > h1 {
+    font-size: 10vw;
+  }
+
+  #culture_header > img {
+    width: 50vw;
+  }
+
+  .culturebox > div {
+    width: 90vw;
+  }
+
+  .culturebox > div > img {
+    width: 95%;
+  }
+
+  #festival {
+    width: 95vw;
+  }
+
+  #festival > img {
+    width: 100%;
+  }
 }
 
 /* SITES */
@@ -389,14 +549,140 @@ html {
   font-family: "Roboto";
   color: white;
   background-color: rgba(0, 0, 0, 0.733);
-  padding: 20px 40px;
+  padding: 2% 4%;
   text-decoration: none;
   border-radius: 10px;
   transition: 250ms ease-in-out;
+  margin: 1%;
 }
 
 #sitebuttons > a:hover {
   background-color: rgb(0, 0, 0);
 }
 
+#sitebuttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 90vw;
+}
+
+@media (max-width: 900px) {
+  .place_box {
+    flex-direction: column;
+    width: 95vw;
+    margin-bottom: 10vh;
+  }
+  .place_box > div {
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  .place_images {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .place_images > img {
+    margin: 0;
+    width: 48vw;
+    height: 48vw;
+    border: solid 1px white;
+  }
+
+  #sitebuttons > a {
+    font-size: 4vw;
+  }
+}
+
 /* CONCLUSION */
+#conclusion {
+  scroll-snap-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Roboto";
+  background-image: url(/src/My\ Post.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+#conclusion > div {
+  width: 80vw;
+  background-color: rgba(0, 0, 0, 0.678);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#conclusion > div > p {
+  width: 60%;
+  color: white;
+  font-size: 3vh;
+  text-align: justify;
+  padding: 5% 10%;
+  border: solid 2px white;
+  margin-top: 8%;
+  margin-bottom: 8%;
+}
+
+#conclusion > a {
+  font-size: 3vh;
+  font-weight: 400;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.568);
+  text-decoration: none;
+  position: absolute;
+  bottom: 3%;
+  padding: 1%;
+  border-radius: 1vh;
+  transition: all ease-in-out 250ms;
+}
+
+#conclusion > a:hover {
+  background-color: rgba(0, 0, 0, 0.568);
+  color: white;
+}
+
+@media (max-width: 900px) {
+  #conclusion {
+    background-position: top;
+  }
+  #conclusion > div {
+    width: 90vw;
+  }
+  #conclusion > div > p {
+    font-size: 4.95vw;
+    text-align: center;
+  }
+  #conclusion > a {
+    font-size: 3vw;
+  }
+}
+
+/*references*/
+
+#references {
+  scroll-snap-align: end;
+  width: 100vw;
+  max-width: 100%;
+  background-color: #e7f2f8;
+}
+
+#references > a {
+  text-decoration: none;
+  color: #ffa384;
+  border-bottom: solid 1px #74bdcb;
+}
+
+.toolong {
+  width: 100vw;
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
